@@ -11,7 +11,7 @@ public class Exit implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (Storage.isRun()) {
-            JOptionPane.showMessageDialog(Storage.getMainFrame().getRootPane(), "Only after the end of the Process can exit ...");
+            JOptionPane.showMessageDialog(Storage.getMainFrame().getRootPane(), "Only after the end of the Process can exit@@@@@ ...");
         } else {
             System.exit(0);
         }
