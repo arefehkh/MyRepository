@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Exit implements ActionListener {
+public class Exit implement ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (Storage.isRun()) {
