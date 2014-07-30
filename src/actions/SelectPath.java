@@ -19,8 +19,9 @@ public class SelectPath implements ActionListener {
         File file;
         JFileChooser fileChooser = new JFileChooser(pathFile);
         fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+            if (fileChooser.showOpenDialog(Storage.getMainFrame().getRootPane()) == JFileChooser.APPROVE_OPTION) {
             file = new File(fileChooser.getSelectedFile().getAbsolutePath());
             Storage.setOpenFilePath(file.getAbsolutePath());
-        
+        }
     }
 }
