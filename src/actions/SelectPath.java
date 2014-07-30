@@ -7,7 +7,7 @@ import java.io.File;
 
 public class SelectPath implements ActionListener {
 
-    public SelectPath(string path) {
+    public SelectPath(String path) {
         pathFile = path;
     }
 
