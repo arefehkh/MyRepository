@@ -51,4 +51,18 @@ public class Start implements ActionListener {
             }
         }
     }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Storage.setRun(true);
+        sb = new StringBuilder();
+
+        if (Storage.getOpenFilePath().trim().length() == 0) {
+            SelectPath selectPath = new SelectPath(Storage.getCurDir());
+            selectPath.actionPerformed(e);
+            if (Storage.getOpenFilePath().trim().length() == 0) {
+                Storage.setRun(false);
+                JOptionPane.showMessageDialog(Storage.getRootPane(), "Select the Path files to open ...");
+                return;
+            }
+        }
 }
