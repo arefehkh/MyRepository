@@ -65,4 +65,15 @@ public class Start implements ActionListener {
                 return;
             }
         }
+       /* 
+        if (Storage.getSaveFilePath().trim().length() == 0) {
+            SelectSavePath selectSavePath = new SelectSavePath(Storage.getCurDir());
+            selectSavePath.actionPerformed(e);
+            if (Storage.getSaveFilePath().trim().length() == 0) {
+                Storage.setRun(false);
+                JOptionPane.showMessageDialog(Storage.getRootPane(), "Select the Path files save...");
+                return;
+            }
+        }*/
+        
 }
