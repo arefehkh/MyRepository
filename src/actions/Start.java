@@ -32,8 +32,10 @@ public class Start implements ActionListener {
     }
      private void createPath(File[] files) throws Exception {
         for (File file : files) {
+            if (file.isDirectory()) {
                 Storage.setElement(file.getName(), generate.createPanel(file.getName()));
                 createPath(file.listFiles());
+            }
         }
     }
 
