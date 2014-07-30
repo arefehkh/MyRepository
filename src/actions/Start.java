@@ -20,4 +20,15 @@ public class Start implements ActionListener {
             }
         }
     }
+     private void listDir(File[] files) throws Exception {
+        for (File file : files) {
+            if (file.isDirectory()) {
+                listDir(file.listFiles());
+            } else {
+                String elementName = Utility.getParent(file.getPath());
+                Storage.getElement(elementName).addContent(generate.createECU(file.getName()));
+            }
+        }
+    }
+
 }
