@@ -10,6 +10,7 @@ public class SelectSavePath implements ActionListener {
 
   @Override
     public void actionPerformed(ActionEvent e) {
+       File file;
         JFileChooser fileChooser = new JFileChooser(pathFile);
         fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         if (fileChooser.showSaveDialog(Storage.getMainFrame().getRootPane()) == JFileChooser.APPROVE_OPTION) {
