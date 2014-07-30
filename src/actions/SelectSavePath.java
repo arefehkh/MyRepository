@@ -8,6 +8,10 @@ import java.io.File;
 public class SelectSavePath implements ActionListener {
    private String pathFile;
 
+ public SelectSavePath(String path) {
+        pathFile = path;
+    }
+    
   @Override
     public void actionPerformed(ActionEvent e) {
        File file;
