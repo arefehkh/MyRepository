@@ -95,5 +95,33 @@ public class Start implements ActionListener {
                 return;
             }
         }*/
-        
+    File file = new File(Storage.getOpenFilePath());
+        dirIndex = 0;
+        fileIndex = 0;
+
+        try {
+            if (mode == StartMode.CheckFolder) {
+                checkDir(file.listFiles());
+                Storage.getMainFrame().getEditorPane().setText(sb.toString());
+
+            } else if (mode == StartMode.WriteXML) {
+                generate = new Generate();
+                root = generate.createRoot();
+                Document doc = generate.createDocument(root);
+                createPath(file.listFiles());
+                listDir(file.listFiles());
+                linkDir(file.listFiles());
+                XMLOutputter output = new XMLOutputter(Format.getPrettyFormat());
+                output.output(doc, new FileWriter(Storage.getSaveFilePath() ,
+                        Storage.getFileSeparator() +
+                        "test_XP_Diag.xml"));
+                JOptionPane.showMessageDialog(Storage.getRootPane(),
+                        "XML File Writting is over successfully ...");
+            }
+        } catch (Exception ex) {
+            Storage.setRun(false);
+            JOptionPane.showMessageDialog(Storage.getRootPane(), ex);
+        }
+        Storage.setRun(false);
+    }    
 }
