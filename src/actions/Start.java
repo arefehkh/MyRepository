@@ -2,6 +2,7 @@ package actions;
 
 public class Start implements ActionListener {
    private StartMode mode;
+   private StringBuilder sb;
     
     public Start(StartMode mode) {
         this.mode = mode;
@@ -38,5 +39,16 @@ public class Start implements ActionListener {
             }
         }
     }
-
+     private void checkDir(File[] files) throws Exception {
+        for (File file : files) {
+            if (file.isDirectory()) {
+                sb.append(++dirIndex).append(" - ")
+                        .append(file.getName()).append(Storage.getLine());
+                checkDir(file.listFiles());
+            } else {
+                sb.append("         ->").append(++fileIndex)
+                        .append(" ").append(file.getName()).append(Storage.getLine());
+            }
+        }
+    }
 }
