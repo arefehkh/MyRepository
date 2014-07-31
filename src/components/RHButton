@@ -1,21 +1,17 @@
 package components;
 
-
 import resource.images;
-
 import javax.swing.*;
 import java.awt.*;
 
 public class RHButton extends JButton {
 
     private images imgs;
-
     public RHButton() {
         initComponent();
     }
 
     private void initComponent() {
-
         imgs = new images();
         setFont(new Font("Dialog", Font.BOLD, 15));
         setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
@@ -29,6 +25,4 @@ public class RHButton extends JButton {
         setBorderPainted(false);
         setContentAreaFilled(false);
     }
-
-
 }
