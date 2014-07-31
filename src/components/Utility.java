@@ -1,9 +1,7 @@
 package components;
 
 import ir.hoobakht.Storage;
-
 import java.util.regex.Matcher;
-
 public class Utility {
 
     public static String getParent(String path) {
