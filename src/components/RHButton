@@ -18,7 +18,7 @@ public class RHButton extends JButton {
 
         imgs = new images();
         setFont(new Font("Dialog", Font.BOLD, 15));
-        setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
         setIcon(imgs.getY_Png());
         setRolloverIcon(imgs.getO_Png());
         setPressedIcon(imgs.getP_Png());
