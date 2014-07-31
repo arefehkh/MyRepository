@@ -1,0 +1,34 @@
+package components;
+
+
+import resource.images;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class RHButton extends JButton {
+
+    private images imgs;
+
+    public RHButton() {
+        initComponent();
+    }
+
+    private void initComponent() {
+
+        imgs = new images();
+        setFont(new Font("Dialog", Font.BOLD, 15));
+        setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        setIcon(imgs.getY_Png());
+        setRolloverIcon(imgs.getO_Png());
+        setPressedIcon(imgs.getP_Png());
+        setHorizontalTextPosition(JButton.CENTER);
+        setVerticalTextPosition(JButton.CENTER);
+        setRolloverEnabled(true);
+        setFocusPainted(false);
+        setBorderPainted(false);
+        setContentAreaFilled(false);
+    }
+
+
+}
