@@ -16,4 +16,31 @@ public class Filter implements FilenameFilter {
             sensitive = false;
             extention = ext.trim().toLowerCase();
         }
-    }}
+    }
+    @Override
+    public boolean accept(File dir, String name) {
+
+        if(new File(name).isDirectory()) {
+            return true;
+        }
+
+        String[] filePart = name.split("\\.");
+
+        if (filePart.length < 2) {
+            return false;
+        }
+
+        String fext = filePart[filePart.length - 1];
+
+        if (sensitive) {
+            if (extention.equals(fext)) {
+                return true;
+            }
+        } else {
+            if (extention.equals(fext.toLowerCase())) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
