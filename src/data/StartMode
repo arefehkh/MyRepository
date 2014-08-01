@@ -1,1 +1,8 @@
+package data;
+
+public enum  StartMode {
+
+    WriteXML,
+    CheckFolder
+}
 
