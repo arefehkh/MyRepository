@@ -59,4 +59,97 @@ public class MainFrame extends JFrame {
             }
         });
     }
+     private void initComponent() {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setUndecorated(false);
+        setSize(1000, 800);
+        setLocationRelativeTo(null);
+        setLayout(new FlowLayout(FlowLayout.CENTER, 15, 15));
+        Storage.setMainFrame(this);
+
+        miStart = new JMenuItem("Start");
+        miStart.addActionListener(new Start(StartMode.WriteXML));
+
+        miSelectPath = new JMenuItem("Select Path");
+        miSelectPath.addActionListener(new SelectPath(Storage.getCurDir()));
+
+        miCheck = new JMenuItem("Check Folders");
+        miCheck.addActionListener(new Start(StartMode.CheckFolder));
+
+        miSave = new JMenuItem("Save");
+        miClose = new JMenuItem("Close");
+        miExit = new JMenuItem("Exit");
+
+        miExit.addActionListener(new Exit());
+        miAbout = new JMenuItem("About");
+
+        mnuFile = new JMenu("File");
+        mnuFile.add(miStart);
+        mnuFile.add(miSelectPath);
+        mnuFile.add(miCheck);
+        mnuFile.add(miSave);
+        mnuFile.add(miClose);
+        mnuFile.add(miExit);
+
+        mnuAbout = new JMenu("About");
+        mnuAbout.add(miAbout);
+
+        mainMenu = new JMenuBar();
+        mainMenu.add(mnuFile);
+        mainMenu.add(mnuAbout);
+        setJMenuBar(mainMenu);
+
+        panelButtons = new JPanel();
+        panelButtons.setLayout(new FlowLayout(FlowLayout.CENTER, 15, 15));
+        panelButtons.setSize(300, 300);
+
+        btnSart = new RHButton();
+        btnSart.setText("Start");
+        btnSart.addActionListener(new Start(StartMode.WriteXML));
+
+        btnSelectPath = new RHButton();
+        btnSelectPath.setText("Select Path");
+        btnSelectPath.addActionListener(new SelectPath(System.getProperty("user.dir")));
+
+        btnCheck = new RHButton();
+        btnCheck.setText("Folders");
+        btnCheck.addActionListener(new Start(StartMode.CheckFolder));
+
+        btnSave = new RHButton();
+        btnSave.setText("Save");
+
+        btnClose = new RHButton();
+        btnClose.setText("Close");
+
+        btnExit = new RHButton();
+        btnExit.setText("Exit");
+        btnExit.addActionListener(new Exit());
+
+        panelButtons.add(btnSart);
+        panelButtons.add(btnSelectPath);
+        panelButtons.add(btnCheck);
+        panelButtons.add(btnSave);
+        panelButtons.add(btnClose);
+        panelButtons.add(btnExit);
+
+        panelEditor = new JPanel();
+        panelEditor.setBorder(new TitledBorder("Editor"));
+        panelEditor.setLayout(new BorderLayout(15, 15));
+
+        editorPane = new JEditorPane();
+        editorPane.setEditable(true);
+        editorPane.setEnabled(true);
+        editorPane.setFocusable(true);
+        editorPane.setDragEnabled(true);
+        getEditorPane().setPreferredSize(new Dimension(900, 470));
+
+        scrollPane = new JScrollPane(getEditorPane());
+
+        panelEditor.add(scrollPane);
+
+        getContentPane().add(panelButtons);
+        getContentPane().add(panelEditor);
+
+    }
+}
 
