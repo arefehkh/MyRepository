@@ -54,5 +54,20 @@ public class Storage {
 
     public static String getCurDir() {
         return curDir;
-    } 
+    }
+    
+    public static void setCurDir(String curDir) {
+        Storage.curDir = curDir;
+    }
+
+    public static String getFileSeparator() {
+        return fileSeparator;
+    }
+    public static String getLine() {
+        return line;
+    }
+
+    public static boolean isRun() {
+        return run;
+    }
 }
