@@ -47,5 +47,12 @@ public class Storage {
     public static JRootPane getRootPane() {
         return mainFrame.getRootPane();
     }
-    
+   
+   public static void setMainFrame(MainFrame mainFrame) {
+        Storage.mainFrame = mainFrame;
+    }
+
+    public static String getCurDir() {
+        return curDir;
+    } 
 }
