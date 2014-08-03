@@ -20,6 +20,16 @@ public class Generate {
         Document doc = new Document(rootElement);
         return doc;
     }
+    
+     public Element createPanel(String Ename) {
+        Element part = new Element("Part");
+        part.setAttribute("Ename", Ename);
+        part.setAttribute("Fname", Ename);
+        part.setAttribute("type", Constants.PANEL_TYPE);
+        part.setAttribute("info", Constants.PANEL_INFO);
+        part.setAttribute("Pic", Constants.PANEL_PIC);
+        return part;
+    }
 
    public Element createECU(String Ename) {
         Element part = new Element("Part");
