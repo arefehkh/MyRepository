@@ -86,7 +86,7 @@ public class Storage {
         return elements.get(key);
     }
 
- public static void setExtension(String extension) {
+    public static void setExtension(String extension) {
         Storage.extension = extension;
     }
 
@@ -94,4 +94,11 @@ public class Storage {
         return elements.get(key);
     }
 
+    public static String getRootFolderName() {
+        return rootFolderName;
+    }
+
+    public static void setRootFolderName(String rootFolderName) {
+        Storage.rootFolderName = rootFolderName;
+    }
 }
