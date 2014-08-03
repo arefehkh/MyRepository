@@ -77,4 +77,13 @@ public class Storage {
     public static String getExtension() {
         return extension;
     }
+    
+     public static void setExtension(String extension) {
+        Storage.extension = extension;
+    }
+
+    public static Element getElement(String key) {
+        return elements.get(key);
+    }
+
 }
