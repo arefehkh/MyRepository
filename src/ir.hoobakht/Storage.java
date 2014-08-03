@@ -63,4 +63,11 @@ public class Storage {
     public static String getFileSeparator() {
         return fileSeparator;
     }
+    public static String getLine() {
+        return line;
+    }
+
+    public static boolean isRun() {
+        return run;
+    }
 }
