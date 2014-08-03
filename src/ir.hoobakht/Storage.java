@@ -70,4 +70,11 @@ public class Storage {
     public static boolean isRun() {
         return run;
     }
+     public static void setRun(boolean run) {
+        Storage.run = run;
+    }
+
+    public static String getExtension() {
+        return extension;
+    }
 }
