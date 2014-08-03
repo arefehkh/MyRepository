@@ -1,8 +1,6 @@
 package ir.hoobakht;
 
-
 import org.jdom2.Element;
-
 import javax.swing.*;
 import java.util.HashMap;
 import java.util.regex.Matcher;
@@ -19,7 +17,6 @@ public class Storage {
     private static String extension = "xml";
     private static HashMap<String, Element> elements = new HashMap<>();
     private static String rootFolderName = "Data";
-
 
     public static String getOpenFilePath() {
         return openFilePath;
@@ -63,6 +60,7 @@ public class Storage {
     public static String getFileSeparator() {
         return fileSeparator;
     }
+    
     public static String getLine() {
         return line;
     }
@@ -70,6 +68,7 @@ public class Storage {
     public static boolean isRun() {
         return run;
     }
+    
      public static void setRun(boolean run) {
         Storage.run = run;
     }
