@@ -86,4 +86,12 @@ public class Storage {
         return elements.get(key);
     }
 
+ public static void setExtension(String extension) {
+        Storage.extension = extension;
+    }
+
+    public static Element getElement(String key) {
+        return elements.get(key);
+    }
+
 }
