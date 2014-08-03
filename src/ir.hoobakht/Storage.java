@@ -1,0 +1,58 @@
+package ir.hoobakht;
+
+
+import org.jdom2.Element;
+
+import javax.swing.*;
+import java.util.HashMap;
+import java.util.regex.Matcher;
+
+public class Storage {
+
+    private static String openFilePath = "";
+    private static String saveFilePath = "F:/";
+    private static MainFrame mainFrame;
+    private static String curDir = System.getProperty("user.dir");
+    private static String fileSeparator = System.getProperty("file.separator");
+    private static String line = System.getProperty("line.separator");
+    private static boolean run = false;
+    private static String extension = "xml";
+    private static HashMap<String, Element> elements = new HashMap<>();
+    private static String rootFolderName = "Data";
+
+
+    public static String getOpenFilePath() {
+        return openFilePath;
+    }
+
+    public static void setOpenFilePath(String openFilePath) {
+        Storage.openFilePath = openFilePath;
+        String[] partName = openFilePath.split(Matcher.quoteReplacement(Storage.getFileSeparator()));
+        if (partName.length == 0) {
+            Storage.openFilePath = "";
+            Storage.rootFolderName = "";
+            JOptionPane.showMessageDialog(Storage.getRootPane(), "Invalid Path selected ...");
+            return;
+        } else if (partName.length < 2) {
+            Storage.rootFolderName = partName[0];
+        } else if (partName.length >= 2) {
+            Storage.rootFolderName = partName[partName.length - 1];
+        }
+    }
+
+    public static MainFrame getMainFrame() {
+        return mainFrame;
+    }
+
+    public static JRootPane getRootPane() {
+        return mainFrame.getRootPane();
+    }
+   
+   public static void setMainFrame(MainFrame mainFrame) {
+        Storage.mainFrame = mainFrame;
+    }
+
+    public static String getCurDir() {
+        return curDir;
+    } 
+}
