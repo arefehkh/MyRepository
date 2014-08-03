@@ -101,4 +101,12 @@ public class Storage {
     public static void setRootFolderName(String rootFolderName) {
         Storage.rootFolderName = rootFolderName;
     }
+    
+    public static String getSaveFilePath() {
+        return saveFilePath;
+    }
+
+    public static void setSaveFilePath(String saveFilePath) {
+        Storage.saveFilePath = saveFilePath;
+    }
 }
