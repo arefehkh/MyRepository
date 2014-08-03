@@ -151,5 +151,8 @@ public class MainFrame extends JFrame {
         getContentPane().add(panelEditor);
 
     }
+    public JEditorPane getEditorPane() {
+        return editorPane;
+    }
 }
 
