@@ -1,6 +1,5 @@
 package resource;
 
-
 import javax.swing.*;
 
 public class images {
